@@ -1,9 +1,17 @@
 public class Player {
-    private String PName;
-    private int StartAcc;
+    public String PName;
+    public int Acc;
 
-    public Player (String name, int StaAcc){
+    public Player (String name, int StaAcc)
+    {
         PName = name;
-        StartAcc = StaAcc;
+        Acc = StaAcc;
+    }
+    public String toString()
+    {
+        String player;
+
+        player = "Spiller 1: " + PName + " " + "Kontobeholding: " + Acc;
+        return player;
     }
 }
