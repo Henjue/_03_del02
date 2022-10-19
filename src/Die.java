@@ -29,7 +29,6 @@ public class Die {
         //  Returns a string representation of this die.
         public String toString()
         {
-
             return Integer.toString(faceValue);
         }
 }
