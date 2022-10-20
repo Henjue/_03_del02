@@ -5,6 +5,8 @@ public class Spil {
     public static void main(String[] args) {
         //Setup
         Scanner scan = new Scanner(System.in);
+        String[][] felter = new String[4][11];
+        felter[0][0] = "nr"; felter[1][0] = "værdi"; felter[2][0] = "feltnavn"; felter[3][0] = "feltbesked";
 
 
         Die die1, die2;
