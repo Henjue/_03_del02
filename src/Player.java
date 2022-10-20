@@ -1,17 +1,25 @@
+import java.util.Scanner;
+
 public class Player {
-    public String PName;
-    public int Acc;
+    public String name;
+    public int balance;
 
-    public Player (String name, int account)
-    {
-        PName = name;
-        Acc = account;
+    public Player (String name, int amount){
+        this.name = name;
+        this.balance = amount;
     }
-    public String toString()
-    {
-        String player;
+    public int getBalance() {
+        return this.balance;
+    }
+    public void setBalance(int amount) {
+        this.balance = amount;
+    }
 
-        player = PName + "'s " + "Kontobeholding: " + Acc;
-        return player;
+    public void speak() {
+        System.out.println(this.name + " har nu " + this.balance + " point");
     }
+
 }
+
+
+
