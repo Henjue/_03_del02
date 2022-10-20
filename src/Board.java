@@ -3,7 +3,8 @@ import java.util.Map;
 
 public class Board {
 
-    Map<Integer,Integer> squares = new HashMap<Integer, Integer>() {
+    Map<Integer,Integer> squares = new HashMap<Integer, Integer>()
+    {
         {
             put(2,  250);
             put(3, -100);
@@ -19,10 +20,8 @@ public class Board {
         }
     };
 
-    public Board() {
-    }
+    public Board() {}
     public int next(int rollTotal) {
         return (int) squares.get(rollTotal);
     }
-
 }

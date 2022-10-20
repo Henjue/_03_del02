@@ -9,7 +9,9 @@ public class Spil {
 
         Die die1, die2;
 
-        String b, konto = " nye kontobeholdning: ", slag = " slog ", press = "Tryk Enter for at rulle med terningerne";
+        String b , player = "Spiller ", name = ", skriv dit navn.", konto = " nye kontobeholdning: ", slag = " slog ";
+        String press = "'s tur, tryk Enter for at rulle med terningerne", startK = " din start kontobeholdning = ";
+        String grats = "Tillykke ", won = " du har vundet";
 
         die1 = new Die();
         die2 = new Die();
@@ -17,36 +19,44 @@ public class Spil {
         Board board = new Board();
 
         Player player1, player2;
-        System.out.println("Spiller 1, skriv dit navn");
+        System.out.println(player + "1" + name);
         player1 = new Player(scan.next(), 1000);
-        System.out.println("Spiller 2, skriv dit navn");
+        System.out.println(player + "2" + name);
         player2 = new Player(scan.next(), 1000);
         System.out.println();
-        System.out.println(player1.name);
+        System.out.println(player1.name + startK + player1.balance);
         System.out.println();
-        System.out.println(player2.name);
+        System.out.println(player2.name + startK + player2.balance);
         //Setup slut
         //Spillet starter
         b = scan.nextLine();
         System.out.println();
 
-        while (player1.balance < 3000 || player2.balance < 3000)
+        while (player1.balance < 3000 && player2.balance < 3000)
         {
-            System.out.println(press);
+            System.out.println(player1.name + press);
             b = scan.nextLine();
             sum = die1.roll() + die2.roll();
             System.out.println(player1.name + slag + sum);
             System.out.println(board.next(sum));
             player1.setBalance(player1.balance + board.next(sum));
             System.out.println(player1.name +"'s" + konto + player1.balance);
-            System.out.println(press);
+            if (player1.balance >= 3000) {
+                System.out.println(grats + player1.name + won);
+                break;
+            }
+            System.out.println();
+            System.out.println(player2.name + press);
             b = scan.nextLine();
             sum = die1.roll() + die2.roll();
             System.out.println(player2.name + slag + sum);
             System.out.println(board.next(sum));
             player2.setBalance(player1.balance + board.next(sum));
             System.out.println(player2.name +"'s" + konto + player2.balance);
+            if (player2.balance >= 3000) {
+                System.out.println(grats + player2.name + won);
+                break;
+            }
         }
-
     }
 }
