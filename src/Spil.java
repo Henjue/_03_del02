@@ -6,6 +6,7 @@ public class Spil {
         //Setup
         Scanner scan = new Scanner(System.in);
 
+
         Die die1, die2;
 
         String b, konto = " nye kontobeholdning: ", slag = " slog ", press = "Tryk Enter for at rulle med terningerne";
