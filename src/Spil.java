@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class Spil {
     public static int sum;
     public static void main(String[] args) {
