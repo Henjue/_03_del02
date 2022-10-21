@@ -3,6 +3,8 @@ import java.util.Map;
 
 public class Board {
 
+
+
     Map<Integer,Integer> squares = new HashMap<Integer, Integer>()
     {
         {
