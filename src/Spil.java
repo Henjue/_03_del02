@@ -58,19 +58,17 @@ public class Spil {
                 System.out.println(grats + player1.name + won);
                 break;
             }
-            else if (sum == 10)
+
+            while (sum == 10)
             {
-                while (sum == 10)
-                {
-                    System.out.println();
-                    System.out.println(player1.name + press);
-                    b = scan.nextLine();
-                    sum = die1.roll() + die2.roll();
-                    System.out.println(player1.name + slag + sum);
-                    System.out.println(felter[sum-2]);
-                    player1.setBalance(player1.balance + board.next(sum));
-                    System.out.println(player1.name +"'s" + konto + player1.balance);
-                }
+                System.out.println();
+                System.out.println(player1.name + press);
+                b = scan.nextLine();
+                sum = die1.roll() + die2.roll();
+                System.out.println(player1.name + slag + sum);
+                System.out.println(felter[sum-2]);
+                player1.setBalance(player1.balance + board.next(sum));
+                System.out.println(player1.name +"'s" + konto + player1.balance);
             }
             System.out.println();
             System.out.println(player2.name + press);
@@ -84,19 +82,17 @@ public class Spil {
                 System.out.println(grats + player2.name + won);
                 break;
             }
-            else if (sum == 10)
+
+            while (sum == 10)
             {
-                while (sum == 10)
-                {
-                    System.out.println();
-                    System.out.println(player2.name + press);
-                    b = scan.nextLine();
-                    sum = die1.roll() + die2.roll();
-                    System.out.println(player2.name + slag + sum);
-                    System.out.println(felter[sum-2]);
-                    player2.setBalance(player2.balance + board.next(sum));
-                    System.out.println(player2.name +"'s" + konto + player2.balance);
-                }
+                System.out.println();
+                System.out.println(player2.name + press);
+                b = scan.nextLine();
+                sum = die1.roll() + die2.roll();
+                System.out.println(player2.name + slag + sum);
+                System.out.println(felter[sum-2]);
+                player2.setBalance(player2.balance + board.next(sum));
+                System.out.println(player2.name +"'s" + konto + player2.balance);
             }
         }
     }
