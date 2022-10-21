@@ -46,29 +46,6 @@ public class Board {
                     {"650", "Goldmine", "Umepata dhahabu kwenye mgodi wa dhahabu na unaiuza kwa DKK 650, wewe ni tajiri!"},
             }
     };
-    public String[][] statements = {
-            {
-                    "'s tur",
-                    "tryk Enter for at rulle med terningerne",
-                    "nye kontobeholdning: ",
-                    "spiller",
-                    "Skriv dit navn.",
-                    "slog",
-                    "Tillykke",
-                    "Du har vundet!"
-            },
-            {
-                    "'s turn",
-                    "Press enter to roll the dice",
-                    "New score: ",
-                    "Player",
-                    "Write your name.",
-                    "hit",
-                    "Congratulations",
-                    "You've won!"
-            }
-    };
-        System.out.println((statements[0][2]));
 
     public Board() {}
     public String next(int lang, int rollTotal, int info) {
