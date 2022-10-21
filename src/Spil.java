@@ -18,7 +18,6 @@ public class Spil {
         felter[9] = "Din bil sidder fast i hullet, koster dig 50 kr. at få trukket den op.";
         felter[10] = "Du har fundet guld i guldminen og sælger det for 650 kr., du er rig!";
 
-
         Die die1, die2;
 
         String player = "Spiller ", name = ", skriv dit navn.", konto = " nye kontobeholdning: ", slag = " slog ";
