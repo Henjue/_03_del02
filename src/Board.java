@@ -1,6 +1,7 @@
 
 public class Board {
 
+    //Et String Array på formen [language][rollTotal][information]
     String[][][] felt = new String[][][]{
 
             //Danish
@@ -46,34 +47,11 @@ public class Board {
                     {"650", "Goldmine", "Umepata dhahabu kwenye mgodi wa dhahabu na unaiuza kwa DKK 650, wewe ni tajiri!"},
             }
     };
-    public String[][] statements = {
-            {
-                    "'s tur",
-                    "tryk Enter for at rulle med terningerne",
-                    "nye kontobeholdning: ",
-                    "spiller",
-                    "Skriv dit navn.",
-                    "slog",
-                    "Tillykke",
-                    "Du har vundet!"
-            },
-            {
-                    "'s turn",
-                    "Press enter to roll the dice",
-                    "New score: ",
-                    "Player",
-                    "Write your name.",
-                    "hit",
-                    "Congratulations",
-                    "You've won!"
-            }
-    };
-        System.out.println((statements[0][2]));
 
     public Board() {}
-    public String next(int lang, int rollTotal, int info) {
 
-        //if (info == 0) {return Integer.parseInt(felt[rollTotal][0]);}
+    //Returnerer én String fra String Array'et felt på et bestemt sprog
+    public String next(int lang, int rollTotal, int info) {
         return felt[lang][rollTotal][info];
     }
 }

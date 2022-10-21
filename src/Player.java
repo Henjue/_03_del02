@@ -1,4 +1,3 @@
-import java.util.Scanner;
 
 public class Player {
     public String name;
@@ -15,6 +14,7 @@ public class Player {
         this.balance = amount;
     }
 
+    // Printer spillerens specifikke attributter
     public void speak() {
         System.out.println(this.name + " har nu " + this.balance + " point");
     }
