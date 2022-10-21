@@ -10,6 +10,7 @@ public class Spil {
         die2 = new Die();
         Board board = new Board();
         Scanner scan = new Scanner(System.in);
+        int lang = 2; //0: Danish, 1: English, 2: Swahili
 
         String press = "'s tur, tryk Enter for at rulle med terningerne", konto = " nye kontobeholdning: ";
         String playerString = "Spiller ", name = ", skriv dit navn.", rolled = " slog ", grats = "Tillykke ", won = " du har vundet";
@@ -34,8 +35,8 @@ public class Spil {
                 scan.nextLine();
                 sum = die1.roll() + die2.roll();
                 System.out.println(currentPlayer.name + rolled + sum);
-                System.out.println(board.next(sum, 2));
-                currentPlayer.setBalance(currentPlayer.balance + Integer.parseInt(board.next(sum, 0)));
+                System.out.println(board.next(lang, sum, 2));
+                currentPlayer.setBalance(currentPlayer.balance + Integer.parseInt(board.next(lang, sum, 0)));
                 System.out.println(currentPlayer.name + "'s" + konto + currentPlayer.balance);
                 if (currentPlayer.balance >= 3000) {
                     System.out.println(grats + currentPlayer.name + won);
@@ -48,8 +49,8 @@ public class Spil {
                     scan.nextLine();
                     sum = die1.roll() + die2.roll();
                     System.out.println(currentPlayer.name + rolled + sum);
-                    System.out.println(board.next(sum, 2));
-                    currentPlayer.setBalance(currentPlayer.balance + Integer.parseInt(board.next(sum, 0)));
+                    System.out.println(board.next(lang, sum, 2));
+                    currentPlayer.setBalance(currentPlayer.balance + Integer.parseInt(board.next(lang, sum, 0)));
                     System.out.println(currentPlayer.name +"'s" + konto + currentPlayer.balance);
                     if (currentPlayer.balance >= 3000) {
                         System.out.println(grats + currentPlayer.name + won);
