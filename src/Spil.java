@@ -11,7 +11,7 @@ public class Spil {
         die2 = new Die();
         Board board = new Board();
         Scanner scan = new Scanner(System.in);
-        int lang = 2; //0: Danish, 1: English, 2: Swahili
+        int lang = 0; //0: Danish, 1: English, 2: Swahili
 
 
         String[] press_lang = new String[]         {"'s tur, tryk Enter for at rulle med terningerne", "'s turn, press Enter to roll the dice", "geuza, bonyeza Enter ili kukunja kete"};
@@ -54,7 +54,7 @@ public class Spil {
                 System.out.println(currentPlayer.name + rolled + sum);
                 System.out.println(board.next(lang, sum, 2));
                 currentPlayer.setBalance(currentPlayer.balance + Integer.parseInt(board.next(lang, sum, 0)));
-                if (currentPlayer.balance<0) {System.out.println(currentPlayer.name + ", har tabt spillet"); break;} // hvis kontobeholdning < 0 taber man
+                if (currentPlayer.balance<=0) {System.out.println(currentPlayer.name + ", har tabt spillet"); System.exit(0);} // hvis kontobeholdning < 0 taber man
                 System.out.println(currentPlayer.name + "'s" + konto + currentPlayer.balance);
                 // Tjekker om en spiller har vundet
                 if (currentPlayer.balance >= 3000) {
@@ -70,7 +70,7 @@ public class Spil {
                     System.out.println(currentPlayer.name + rolled + sum);
                     System.out.println(board.next(lang, sum, 2));
                     currentPlayer.setBalance(currentPlayer.balance + Integer.parseInt(board.next(lang, sum, 0)));
-                    if (currentPlayer.balance<0) {System.out.println(currentPlayer.name + ", har tabt spillet"); break;} // hvis kontobeholdning < 0 taber man
+                    if (currentPlayer.balance<0) {System.out.println(currentPlayer.name + ", har tabt spillet"); System.exit(0);} // hvis kontobeholdning < 0 taber man
                     System.out.println(currentPlayer.name +"'s" + konto + currentPlayer.balance);
                     // Tjekker om en spiller har vundet
                     if (currentPlayer.balance >= 3000) {
