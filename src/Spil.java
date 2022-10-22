@@ -53,7 +53,6 @@ public class Spil {
                 System.out.println("\n\n" + currentPlayer.name + press);
                 scan.nextLine();
                 sum = die1.roll() + die2.roll();
-                sum = 3;
                 System.out.println(currentPlayer.name + rolled + sum);
                 System.out.println(board.next(lang, sum, 2));
                 currentPlayer.setBalance(currentPlayer.balance + Integer.parseInt(board.next(lang, sum, 0)));
