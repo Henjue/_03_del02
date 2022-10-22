@@ -5,7 +5,7 @@ public class Board {
     String[][][] felt = new String[][][]{
 
             //Danish
-            {       {}, {},
+            {
                     {"250", "Tower", "Du er ankommet til tårnet, du finder 250 kr. i en kiste."},
                     {"-100", "Crater", "Du kører ned i et krater, det koster dig 100 kr. at komme op."},
                     {"100", "Palace gates", "Vagterne ved paladsets port betaler dig 100 kr. for at køre væk, da du blokerer for adgang!"},
@@ -19,7 +19,7 @@ public class Board {
                     {"650", "Goldmine", "Du har fundet guld i guldminen og sælger det for 650 kr., du er rig!"},
             },
             //English
-            { {}, {},
+            {
                     {"250", "Tower", "You have arrived at the tower, you find DKK 250 in a chest."},
                     {"-100", "Crater", "You drive into a crater, it costs you DKK 100 to get up."},
                     {"100", "Palace gates", "The guards at the palace gate will pay you DKK 100 to drive away as you block access!"},
@@ -33,7 +33,7 @@ public class Board {
                     {"650", "Goldmine", "You have found gold in the gold mine and are selling it for DKK 650, you are rich!"},
             },
             //Swahili
-            {{}, {},
+            {
                     {"250", "Mnara", "Umefika kwenye mnara, unakuta DKK 250 kwenye kifua."},
                     {"-100", "Crater", "Unaendesha gari kwenye kreta, inakugharimu DKK 100 kuamka."},
                     {"100", "Lango la Ikulu", "Walinzi kwenye lango la ikulu watakulipa DKK 100 ili uendeshe gari unapozuia ufikiaji!"},
@@ -52,6 +52,6 @@ public class Board {
 
     //Returnerer én String fra String Array'et felt på et bestemt sprog
     public String next(int lang, int rollTotal, int info) {
-        return felt[lang][rollTotal][info];
+        return felt[lang][rollTotal-2][info];
     }
 }
