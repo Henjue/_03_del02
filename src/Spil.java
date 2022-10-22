@@ -54,7 +54,7 @@ public class Spil {
                 System.out.println(currentPlayer.name + rolled + sum);
                 System.out.println(board.next(lang, sum, 2));
                 currentPlayer.setBalance(currentPlayer.balance + Integer.parseInt(board.next(lang, sum, 0)));
-                if (currentPlayer.balance<0) {currentPlayer.setBalance(0);} // hvis kontobeholdning < 0, sættes konto = 0
+                if (currentPlayer.balance<0) {System.out.println(currentPlayer.name + ", har tabt spillet"); break;} // hvis kontobeholdning < 0 taber man
                 System.out.println(currentPlayer.name + "'s" + konto + currentPlayer.balance);
                 // Tjekker om en spiller har vundet
                 if (currentPlayer.balance >= 3000) {
@@ -70,7 +70,7 @@ public class Spil {
                     System.out.println(currentPlayer.name + rolled + sum);
                     System.out.println(board.next(lang, sum, 2));
                     currentPlayer.setBalance(currentPlayer.balance + Integer.parseInt(board.next(lang, sum, 0)));
-                    if (currentPlayer.balance<0) {currentPlayer.setBalance(0);} // hvis kontobeholdning < 0, sættes konto = 0
+                    if (currentPlayer.balance<0) {System.out.println(currentPlayer.name + ", har tabt spillet"); break;} // hvis kontobeholdning < 0 taber man
                     System.out.println(currentPlayer.name +"'s" + konto + currentPlayer.balance);
                     // Tjekker om en spiller har vundet
                     if (currentPlayer.balance >= 3000) {
