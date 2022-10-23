@@ -1,18 +1,24 @@
+import javax.swing.*;
 import java.util.Scanner;
 
 public class Spil {
+
     public static int sum;
+    public static int lang; //0: Danish, 1: English, 2: Swahili
     public static void main(String[] args) {
 
-
         // Setup
+        JFrame frame = new GameGUI("Dice Game");
+        frame.setVisible(true);
+
         Die die1, die2;
         die1 = new Die();
         die2 = new Die();
         Board board = new Board();
         Scanner scan = new Scanner(System.in);
-        int lang = 0; //0: Danish, 1: English, 2: Swahili
 
+        System.out.println("Please choose a language in the dialog blox before continuing. ");
+        scan.nextLine();
 
         String[] press_lang = new String[]         {"'s tur, tryk Enter for at rulle med terningerne", "'s turn, press Enter to roll the dice", "geuza, bonyeza Enter ili kukunja kete"};
         String[] konto_lang = new String[]         {" nye kontobeholdning: ", "new account balance: ", "salio la akaunti: "};
