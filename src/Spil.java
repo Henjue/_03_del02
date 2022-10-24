@@ -21,7 +21,7 @@ public class Spil {
         scan.nextLine();
 
         String[] press_lang = new String[]         {"'s tur, tryk Enter for at rulle med terningerne", "'s turn, press Enter to roll the dice", "geuza, bonyeza Enter ili kukunja kete"};
-        String[] konto_lang = new String[]         {" nye kontobeholdning: ", "new account balance: ", "salio la akaunti: "};
+        String[] konto_lang = new String[]         {" nye kontobeholdning: ", " new account balance: ", " salio la akaunti: "};
         String[] playerString_lang = new String[]  {"Spiller ", "Player ", "Wachezaji "};
         String[] name_lang = new String[]          {", skriv dit navn.", ", write your name.", ", andika jina lako."};
         String[] rolled_lang = new String[]        {" slog ", " rolled ", " akavingirisha "};
