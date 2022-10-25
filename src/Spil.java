@@ -20,6 +20,7 @@ public class Spil {
         String[] grats_lang = new String[]         {"Tillykke ", "Congratulations ", "Hongera sana "};
         String[] won_lang = new String[]           { " du har vundet", " you have won", " Umeshinda"};
         String[] tabt_lang = new String[]          {", kan ikke betale og taber derfor spillet", ", can't pay and therefore loses the game", ", haiwezi kulipa na hivyo kupoteza mchezo"};
+        String[] land_lang = new String[]          {"Du er landet på ", "You landed on ", "Ulitua "};
         String press = press_lang[lang];
         String konto = konto_lang[lang];
         String playerString = playerString_lang[lang];
@@ -28,6 +29,7 @@ public class Spil {
         String grats = grats_lang[lang];
         String won = won_lang[lang];
         String tabt = tabt_lang[lang];
+        String land = land_lang[lang];
 
         Player player1, player2;
         System.out.println(playerString + "1" + name);
@@ -52,6 +54,7 @@ public class Spil {
                 scan.nextLine();
                 sum = die1.roll() + die2.roll();
                 System.out.println(currentPlayer.name + rolled + sum);
+                System.out.println(land + board.next(lang, sum, 1));
                 System.out.println(board.next(lang, sum, 2));
                 currentPlayer.setBalance(currentPlayer.balance + Integer.parseInt(board.next(lang, sum, 0)));
                 if (currentPlayer.balance<0) {System.out.println(currentPlayer.name + tabt); System.exit(0);} // hvis kontobeholdning < 0 taber man
@@ -68,6 +71,7 @@ public class Spil {
                     scan.nextLine();
                     sum = die1.roll() + die2.roll();
                     System.out.println(currentPlayer.name + rolled + sum);
+                    System.out.println(land + board.next(lang, sum, 1));
                     System.out.println(board.next(lang, sum, 2));
                     currentPlayer.setBalance(currentPlayer.balance + Integer.parseInt(board.next(lang, sum, 0)));
                     if (currentPlayer.balance<0) {System.out.println(currentPlayer.name + tabt); System.exit(0);} // hvis kontobeholdning < 0 taber man
