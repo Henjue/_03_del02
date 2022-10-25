@@ -5,7 +5,6 @@ import java.awt.event.ActionListener;
 public class GameGUI extends JFrame{
     private JPanel mainPanel;
     private JButton continueButton;
-    private JLabel mainText;
     private JComboBox<String> language;
 
     public GameGUI(String title) {
@@ -18,7 +17,8 @@ public class GameGUI extends JFrame{
         continueButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                mainText.setText("(Button has been pressed)");
+                //mainText.setText("(Button has been pressed)");
+                Spil.lang = language.getSelectedIndex();
             }
         });
 
@@ -29,14 +29,12 @@ public class GameGUI extends JFrame{
             language.addItem(lang);
         }
 
-        language.addActionListener(new ActionListener() {
+        /*language.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int user_lang = language.getSelectedIndex();
-                System.out.println(user_lang);
-                Spil.lang = user_lang;
+                Spil.lang = language.getSelectedIndex();
             }
-        });
+        });*/
     }
 
 

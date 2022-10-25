@@ -5,7 +5,7 @@ public class Spil {
 
     public static int sum;
     public static int lang; //0: Danish, 1: English, 2: Swahili
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         // Setup
         JFrame frame = new GameGUI("Dice Game");
@@ -16,9 +16,14 @@ public class Spil {
         die2 = new Die();
         Board board = new Board();
         Scanner scan = new Scanner(System.in);
+        lang = -1;
 
-        System.out.println("Please choose a language in the dialog blox before continuing. ");
-        scan.nextLine();
+        System.out.println("Please choose a language in the dialog box before continuing. ");
+        while (lang == -1) {
+            Thread.sleep(1000);
+            continue;
+        }
+        frame.setVisible(false);
 
         String[] press_lang = new String[]         {"'s tur, tryk Enter for at rulle med terningerne", "'s turn, press Enter to roll the dice", "geuza, bonyeza Enter ili kukunja kete"};
         String[] konto_lang = new String[]         {" nye kontobeholdning: ", " new account balance: ", " salio la akaunti: "};
@@ -60,7 +65,7 @@ public class Spil {
                 scan.nextLine();
                 sum = die1.roll() + die2.roll();
                 System.out.println(currentPlayer.name + rolled + sum);
-                System.out.println(board.next(lang, sum, 2));
+                System.out.println(board.next(lang, sum, 1) + ": " + board.next(lang, sum, 2));
                 currentPlayer.setBalance(currentPlayer.balance + Integer.parseInt(board.next(lang, sum, 0)));
                 if (currentPlayer.balance<0) {System.out.println(currentPlayer.name + tabt); System.exit(0);} // hvis kontobeholdning < 0 taber man
                 System.out.println(currentPlayer.name + "'s" + konto + currentPlayer.balance);
