@@ -13,7 +13,7 @@
           <grid row="1" column="0" row-span="2" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="TestButton"/>
+          <text value="Continue"/>
         </properties>
       </component>
       <component id="7fa5" class="javax.swing.JLabel" binding="mainText">
@@ -28,7 +28,9 @@
         <constraints>
           <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
-        <properties/>
+        <properties>
+          <model/>
+        </properties>
       </component>
     </children>
   </grid>
