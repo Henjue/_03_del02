@@ -11,13 +11,6 @@ class PlayerTest {
         player.setBalance(1000);
         assertEquals(1000, player.balance);
     }
-
-    /*
-        @org.junit.jupiter.api.Test
-        void setBalance() {
-        }
-
-     */
     @org.junit.jupiter.api.Test
     //Tester samtlige int-værdier
     void getBalance2() {
@@ -29,7 +22,6 @@ class PlayerTest {
     }
 
     @org.junit.jupiter.api.Test
-        //Tester samtlige int-værdier
     void getBalance3() {
         Player player = new Player("Name", 1000); //tilfældig værdi til at starte med
         player.setBalance(-2000);
