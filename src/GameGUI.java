@@ -10,6 +10,16 @@ public class GameGUI extends JFrame{
     private JLabel mainText;
     private double width;
     private double height;
+    private final Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+
+    public void startGame() {
+        mainPanel.remove(continueButton);
+        mainPanel.remove(language);
+        mainPanel.remove(mainText);
+        this.pack();
+        this.setSize((int)this.screenSize.getWidth(),(int)this.screenSize.getHeight());
+
+    }
 
     public GameGUI(String title) {
         super(title);
@@ -17,14 +27,14 @@ public class GameGUI extends JFrame{
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setContentPane(mainPanel);
         this.pack();
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        this.setSize((int)screenSize.getWidth(),(int)screenSize.getHeight());
+        this.setSize((int)this.screenSize.getWidth(),(int)this.screenSize.getHeight());
 
         continueButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //mainText.setText("(Button has been pressed)");
                 Spil.lang = language.getSelectedIndex();
+                startGame();
             }
         });
 
@@ -48,3 +58,4 @@ public class GameGUI extends JFrame{
         // TODO: place custom component creation code here
     }
 }
+
