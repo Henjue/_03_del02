@@ -1,32 +1,15 @@
-import javax.swing.*;
-import java.util.Scanner;
-
-public class Spil {
+public class Spiltestfil {
 
     public static int sum;
     public static int lang; //0: Danish, 1: English, 2: Swahili
-    public static void main(String[] args) throws InterruptedException {
+    public static void main() {
 
-        // Setup
-        JFrame frame = new GameGUI("Dice Game");
-        frame.setVisible(true);
 
         Die die1, die2;
         die1 = new Die();
         die2 = new Die();
         Board board = new Board();
-        Scanner scan = new Scanner(System.in);
-        lang = -1;
-
-
-        System.out.println("Please choose a language in the dialog box before continuing. ");
-        while (lang == -1) {
-            Thread.sleep(1000);
-            continue;
-        }
-        frame.setVisible(false);
-
-
+        lang = 0;
 
         String[] press_lang = new String[]         {"'s tur, tryk Enter for at rulle med terningerne", "'s turn, press Enter to roll the dice", "geuza, bonyeza Enter ili kukunja kete"};
         String[] konto_lang = new String[]         {" nye kontobeholdning: ", " new account balance: ", " salio la akaunti: "};
@@ -44,28 +27,25 @@ public class Spil {
         String grats = grats_lang[lang];
         String won = won_lang[lang];
         String tabt = tabt_lang[lang];
+        boolean vundet = false;
 
         Player player1, player2;
         System.out.println(playerString + "1" + name);
-        player1 = new Player(scan.next(), 1000);
+        player1 = new Player("Lars", 1000);
         System.out.println(playerString + "2" + name);
-        player2 = new Player(scan.next(), 1000);
+        player2 = new Player("Anton", 1000);
 
         // Printer spillernes start kontobeholdning
         System.out.println("\n" + player1.name + konto + player1.balance);
         System.out.println("\n" + player2.name + konto + player2.balance);
-
-        scan.nextLine();
-
-        // Samler spillerne i et array
+                // Samler spillerne i et array
         Player[] allPlayers = new Player[] {player1, player2};
 
         // Spillet starter
-        while (true) {
+        while (!vundet) {
             // Itererer over spillerne
             for (Player currentPlayer:allPlayers) {
                 System.out.println("\n\n" + currentPlayer.name + press);
-                scan.nextLine();
                 sum = die1.roll() + die2.roll();
                 System.out.println(currentPlayer.name + rolled + sum);
                 System.out.println(board.next(lang, sum, 1) + ": " + board.next(lang, sum, 2));
@@ -75,13 +55,12 @@ public class Spil {
                 // Tjekker om en spiller har vundet
                 if (currentPlayer.balance >= 3000) {
                     System.out.println(grats + currentPlayer.name + won);
-                    System.exit(0);
+                    vundet = true;
                 }
 
                 while (sum == 10)   // Hvis en spiller har slået 10 øjne
                 {
                     System.out.println("\n\n" + currentPlayer.name + press);
-                    scan.nextLine();
                     sum = die1.roll() + die2.roll();
                     System.out.println(currentPlayer.name + rolled + sum);
                     System.out.println(board.next(lang, sum, 2));
@@ -91,7 +70,7 @@ public class Spil {
                     // Tjekker om en spiller har vundet
                     if (currentPlayer.balance >= 3000) {
                         System.out.println(grats + currentPlayer.name + won);
-                        System.exit(0);
+                        vundet = true;
                     }
                 }
             }
