@@ -61,7 +61,7 @@ public class Spil {
         Player[] allPlayers = new Player[] {player1, player2};
 
         // Spillet starter
-        while (player1.balance < 3000 && player2.balance < 3000) {
+        while (true) {
             // Itererer over spillerne
             for (Player currentPlayer:allPlayers) {
                 System.out.println("\n\n" + currentPlayer.name + press);
@@ -75,7 +75,7 @@ public class Spil {
                 // Tjekker om en spiller har vundet
                 if (currentPlayer.balance >= 3000) {
                     System.out.println(grats + currentPlayer.name + won);
-                    break;
+                    System.exit(0);
                 }
 
                 while (sum == 10)   // Hvis en spiller har slået 10 øjne
@@ -91,7 +91,7 @@ public class Spil {
                     // Tjekker om en spiller har vundet
                     if (currentPlayer.balance >= 3000) {
                         System.out.println(grats + currentPlayer.name + won);
-                        break;
+                        System.exit(0);
                     }
                 }
             }
