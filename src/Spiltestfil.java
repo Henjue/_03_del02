@@ -2,7 +2,7 @@ public class Spiltestfil {
 
     public static int sum;
     public static int lang; //0: Danish, 1: English, 2: Swahili
-    public static void main(String[] args) {
+    public static void main() {
 
 
         Die die1, die2;
