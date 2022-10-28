@@ -18,7 +18,7 @@ class DieTest {
         }
     }
 
-    @Test
+    @Test //Ikke super relevante da de ikke bliver brugt i koden:
     void setFaceValue() {
     }
 
@@ -26,7 +26,7 @@ class DieTest {
     void getFaceValue() {
     }
 
-    @Test
+    @Test //Kan testes på senere tidspunkt men fungerer fint :)
     void testToString() {
     }
 }
