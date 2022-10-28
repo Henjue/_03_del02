@@ -2,7 +2,7 @@ public class Spiltestfil {
 
     public static int sum;
     public static int lang; //0: Danish, 1: English, 2: Swahili
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
 
 
         Die die1, die2;
@@ -27,6 +27,7 @@ public class Spiltestfil {
         String grats = grats_lang[lang];
         String won = won_lang[lang];
         String tabt = tabt_lang[lang];
+        boolean vundet = false;
 
         Player player1, player2;
         System.out.println(playerString + "1" + name);
@@ -41,7 +42,7 @@ public class Spiltestfil {
         Player[] allPlayers = new Player[] {player1, player2};
 
         // Spillet starter
-        while (true) {
+        while (!vundet) {
             // Itererer over spillerne
             for (Player currentPlayer:allPlayers) {
                 System.out.println("\n\n" + currentPlayer.name + press);
@@ -54,7 +55,7 @@ public class Spiltestfil {
                 // Tjekker om en spiller har vundet
                 if (currentPlayer.balance >= 3000) {
                     System.out.println(grats + currentPlayer.name + won);
-                    System.exit(0);
+                    vundet = true;
                 }
 
                 while (sum == 10)   // Hvis en spiller har slået 10 øjne
@@ -69,7 +70,7 @@ public class Spiltestfil {
                     // Tjekker om en spiller har vundet
                     if (currentPlayer.balance >= 3000) {
                         System.out.println(grats + currentPlayer.name + won);
-                        System.exit(0);
+                        vundet = true;
                     }
                 }
             }
