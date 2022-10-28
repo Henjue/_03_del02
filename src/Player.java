@@ -5,7 +5,7 @@ public class Player {
     public Player (String name, int amount){
         this.name = name;
         this.balance = amount;
-        if (this.balance>0) {
+        if (this.balance<0) {
             this.balance = 0;
         }
     }
@@ -14,7 +14,7 @@ public class Player {
     }
     public void setBalance(int amount) {
         this.balance = amount;
-        if (this.balance>0) {
+        if (this.balance<0) {
             this.balance = 0;
         }
     }
