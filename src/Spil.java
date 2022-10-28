@@ -18,6 +18,7 @@ public class Spil {
         Scanner scan = new Scanner(System.in);
         lang = -1;
 
+
         System.out.println("Please choose a language in the dialog box before continuing. ");
         while (lang == -1) {
             Thread.sleep(1000);
