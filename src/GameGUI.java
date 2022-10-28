@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -6,6 +7,9 @@ public class GameGUI extends JFrame{
     private JPanel mainPanel;
     private JButton continueButton;
     private JComboBox<String> language;
+    private JLabel mainText;
+    private double width;
+    private double height;
 
     public GameGUI(String title) {
         super(title);
@@ -13,6 +17,8 @@ public class GameGUI extends JFrame{
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setContentPane(mainPanel);
         this.pack();
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setSize((int)screenSize.getWidth(),(int)screenSize.getHeight());
 
         continueButton.addActionListener(new ActionListener() {
             @Override
